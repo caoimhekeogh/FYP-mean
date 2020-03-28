@@ -1,0 +1,213 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.compTest._id ? 'Edit Theory of Mind Test' : 'Theory of Mind & Strange Stories Test'}}</h1>
+  </div>
+  <div class="pull-right">
+    <a ng-show="vm.compTest._id" class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.tomForm" class="form-horizontal" ng-submit="vm.save(vm.form.tomForm.$valid)" novalidate>
+      <fieldset>
+        <h2 style="text-align:center;"><b> The Mentalistic Stories </b></h2>
+        <br>
+        <label class="control-label"><h2>Story 1: Pretend</h2></label>
+           <p>Katie and Emma are playing in the house.
+             Emma picks up a banana from the fruit bowl and holds it up to her ear.
+             She says to Katie,"Look! This banana is a telephone!" </p>
+        <div class="detQ" id="detQ">
+          <h3 id="detQuestion">Detection Question:</h3>
+          <p><b>Is it true what Emma says? Is the banana a telephone?</b></p>
+          <input type="checkbox" id="detYes" class="detQ" name="detQMSS1" value="Yes">
+            <label for="detYes"> Yes </label><br>
+          <input type="checkbox" id="detNo" class="detQ" name="detQMSS1" value="No">
+            <label for="detNo"> No </label><br>
+          <input type="checkbox" id="detDK" class="detQ" name="detQMSS1" value="Don't Know">
+            <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+          <h3 id="idQuestion">Identification Question:</h3>
+          <p><b>Why does Emma say this?</b></p>
+          <input type="text" id="idResponse" class="form-control" placeholder="Why does Emma say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 2: Joke</h2></label>
+        <p>Today James is going to Claire's house for the first time.
+        He is going over fr tea, and he is looking forward to seeing Claire's dog,
+        which she talks about all the time. James likes dogs very much.</p>
+        <p>When James arrives at Claire's house, Claire runs to open the door.
+          Claire's dog jumps up to greet James. Claire's dog is huge; it's almost as big as James!</p>
+        <p>When James sees Claire's huge dog he says, "Claire, you haven't got a dog at all. You've got an elephant!"</p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Is it true what James says?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detMSQS2" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS2" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS2" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why does James say this?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does James say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 3: White Lie</h2></label>
+        <p>One day Aunt Jane came to visit Peter.
+          Now Peter loves his aunt very much, but today she is wearing a new hat; a new hat, which Peter thinks is very ugly indeed.</p>
+        <p>Peter thinks his aunt looks silly in it, and much nicer in her old hat.
+          But when Aunt Jane asks Peter, “How do you like my new hat”, Peter says, “Oh, its very nice”.</p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Is it true what Peter says?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detQMSS3" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS3" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS3" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why does Peter say this?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does Peter say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 4: Figure of Speech</h2></label>
+        <p>Emma has a cough. All through lunch she coughs and coughs.
+          Father says: “Poor Emma, you must have a frog in your throat!”</p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Is it true what Father says to Emma?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detQMSS4" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS4" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS4" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why does Father say that?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does Father say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 5: Irony</h2></label>
+        <p>Ann’s mother has spent a long time cooking Ann’s favorite meal; fish and chips.
+          But when she brings it to Ann, she is watching TV, and she doesn’t even look up, or say thank you.
+        Ann’s mother is cross and says, “Well, that’s very nice, isn’t it! That is what I call politeness!” </p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Is it true what Ann's mother says?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detQMSS5" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS5" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS5" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why does Ann's mother say this?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does Ann's mother say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 6: Misunderstanding</h2></label>
+        <p>Late one night old Mrs. Peabody is walking home.
+          She doesn’t like walking alone in the dark because she is always afraid that someone will attack her and rob her.
+          She is really very nervous! </p>
+        <p>Suddenly, out of the shadow comes a man.
+          He wants to ask Mrs. Peabody what time it is, so he walks towards her.
+         When Mrs. Peabody sees the man coming towards her, she starts to tremble and says, “Take my purse, just don’t hurt me”. </p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Was the man surprised at what Mrs. Peabody said?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detQMSS6" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS6" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS6" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why did she say that, when the man only wanted to know the time?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does Mrs. Peabody say this...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 7: Forgetting</h2></label>
+        <p>Yvonne is playing in the garden with her doll.
+          She leaves her doll in the garden when her mother calls her to come in for lunch.
+          While they are having lunch, it starts to rain.
+         Yvonne’s mother asks Yvonne: “Did you leave your doll in the garden?” Yvonne answers: “No, I brought her in with me”.</p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Is it true what Yvonne says?</b></p>
+        <input type="checkbox" id="detYes" class="detQ" name="detQMSS7" value="Yes">
+         <label for="detYes"> Yes </label><br>
+        <input type="checkbox" id="detNo" class="detQ" name="detQMSS7" value="No">
+         <label for="detNo"> No </label><br>
+        <input type="checkbox" id="detDK" class="detQ" name="detQMSS7" value="Don't Know">
+         <label for="detDK"> Don't Know </label><br>
+        </div>
+        <div class="idQ" id="idQ">
+        <h3 id="idQuestion">Identification Question:</h3>
+        <p><b>Why does Yvonne say this?</b></p>
+        <input type="text" id="idResponse" class="form-control" placeholder="Why does Yvonne say this...?" required>
+        </div>
+
+        <br><br><br>
+
+        <h2 style="text-align:center;"><b> The Physical Stories </b></h2>
+        <br>
+
+        <label class="control-label"><h2>Story 1: Army </h2></label>
+        <p>Two enemy powers have been at war for a very long time. Each army has won several battles, but now the outcome could go either way.
+          The forces are equally matched. However, the Blue army is stronger than the Yellow army in foot soldiers and artillery.
+         But the Yellow army is stronger than the Blue army in air power.</p>
+        <p>On the day of the final battle, which will decide the outcome of the war, there is a heavy fog over the mountains where the fighting is about to occur.
+          Low-lying clouds hang above the soldiers. By the end of the day the Blue army have won.</p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Why did the Blue army win?</b></p>
+        <input type="text" id="detResponse" class="form-control" placeholder="Why did the Blue army win...?" required>
+        </div>
+
+        <br><br>
+
+        <label class="control-label"><h2>Story 2: Glasses </h2></label>
+        <p>Sarah is very long-sighted. She has only one pair of glasses, which she keeps losing.
+         Today she has lost her glasses again and she needs to find them. She had them yesterday evening when she looked up the television programmes.
+         She must have left them somewhere that she has been today. She asks Ted to find her glasses. </p>
+        <p>She tells him that today she went to her regular early morning keep fit class, then to the post office, and last to the flower shop.
+         Ted goes straight to the post office. </p>
+        <div class="detQ" id="detQ">
+        <h3 id="detQuestion">Detection Question:</h3>
+        <p><b>Why is the post office the most likely place to look?</b></p>
+        <input type="text" id="detResponse" class="form-control" placeholder="Why the post office...?" required>
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.fauxPas._id ? 'Update' : 'Submit Answers'}}</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

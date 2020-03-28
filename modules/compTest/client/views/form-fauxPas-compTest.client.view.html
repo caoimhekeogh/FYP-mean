@@ -1,0 +1,203 @@
+<!--
+<script type="text/javascript">
+  //#################### Need fix ####################################
+
+  //Only tick one checkox for answer
+  $("input:checkbox").on('click', function() {
+    var $box = $(this);
+      if ($box.is(":checked")) {
+        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+        $(group).prop("checked", false);
+        $box.prop("checked", true);
+      } else {
+        $box.prop("checked", false);
+      }
+    });
+-->
+<section>
+  <div class="page-header">
+    <h1>Faux Pas Test</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.fauxPasForm" class="form-horizontal" ng-submit="vm.save(vm.fauxPasForm.$valid)" novalidate autocomplete="off" >
+      <fieldset>
+          <h2 style="text-align:center;">Faux Pas Stories</h2>
+          <label class="control-label"><h2>Story 1:</h2></label>
+          <p>All of the class took part in a story competition. Emma really wanted to win. Whilst she was
+          away from school, the results of the competition were announced: Alice was the winner. The
+          next day, Alice saw Emma and said “I’m sorry about your story”. “What do you mean?” said
+          Emma. “Oh nothing,” said Alice.</p>
+          <div class="detQ" id="detQ">
+            <h3 id="detQuestion">Detection Question:</h3>
+            <p><b>In the story did someone say something that they should not have said?</b></p>
+            <input type="checkbox" class="detQ" name="detQFPSS1" value="Yes" ng-model="vm.compTest.detYes1">
+             <label for="detQFPSS1s"> Yes </label><br>
+            <input type="checkbox" class="detQ" name="detQFPSS1" value="No" ng-model="vm.compTest.detNo1">
+             <label for="detQFPSS1"> No </label><br>
+            <input type="checkbox" class="detQ" name="detQFPSS1" value="Don't Know" ng-model="vm.compTest.detDK1">
+             <label for="detQFPSS1"> Don't Know </label><br>
+          </div>
+
+          <div class="idQ" id="idQ" ng-show="vm.compTest.detYes1">
+            <h3 id="idQuestion">Identification Question:</h3>
+            <p><b>What did they say that they should not have said?</b></p>
+            <input type="text" class="form-control" id="idResponse" name="idQFPSS1" placeholder="What did they say...?" ng-model="vm.compTest.idResponse1">
+          </div>
+<!--
+          <div class="compQ" id="compQ">
+            <h3 id="compQuestion">Comprehension Question:</h3>
+            <p><b>Who won the story competition?</b></p>
+            <input type="checkbox" id="optionEmma" class="compQ" name="compQFPSS1" value="Emma">
+              <label for="optionEmma"> Emma </label><br>
+            <input type="checkbox" id="optionAlice" class="compQ" name="compQFPSS1" value="Alice">
+              <label for="optionAlice"> Alice </label><br>
+          </div>
+
+          <div class="fbQ" id="fbQ">
+            <h3 id="falseBeliefQuestion">False Belief Question:</h3>
+            <p><b>Did Alice realise that Emma hadn’t heard the results of the competition?</b></p>
+            <input type="checkbox" id="fbYes" class="fbQ" name="fbQFPSS1" value="Yes">
+              <label for="fbYes"> Yes </label><br>
+            <input type="checkbox" id="fbNo" class="fbQ" name="fbQFPSS1" value="No">
+              <label for="fbNo"> No </label><br>
+            <input type="checkbox" id="fbDK" class="fbQ" name="fbQFPSS1" value="Don't Know">
+              <label for="fbDK"> Don't Know </label><br>
+          </div>
+          <br>
+
+          <br><br>
+
+          <label class="control-label"><h2>Story 2:</h2></label>
+          <p>Robert had just started at a new school. He said to his new friend, Andrew, “My Mum is a
+          dinner lady at this school” . Then Claire came over and said, “I hate dinner ladies. They’re
+          horrible”. “Do you want to come and play rounders?” Andrew asked Claire. “No” she replied
+          “I’m not feeling very well.”</p>
+          <div class="detQ" id="detQ">
+          <h3 id="detQuestion">Detection Question:</h3>
+          <p><b>In the story did someone say something that they should not have said?</b></p>
+          <input type="checkbox" id="detYes" class="detQ" name="detQFPSS2" value="Yes" ng-model="showID2">
+           <label for="detYes"> Yes </label><br>
+          <input type="checkbox" id="detNo" class="detQ" name="detQFPSS2" value="No">
+           <label for="detNo"> No </label><br>
+          <input type="checkbox" id="detDK" class="detQ" name="detQFPSS2" value="Don't Know">
+           <label for="detDK"> Don't Know </label><br>
+          </div>
+
+          <div class="idQ" id="idQ" ng-show="showID2">
+          <h3 id="idQuestion">Identification Question:</h3>
+          <p><b>What did they say that they should not have said?</b></p>
+          <input type="text" id="idResponse" class="form-control" placeholder="What did they say...?" required>
+          </div>
+
+          <div class="compQ" id="compQ">
+          <h3 id="compQuestion">Comprehension Question:</h3>
+          <p><b>What job does Robert’s Mum do? </b></p>
+          <input type="text" id="compResponse" class="form-control" placeholder="Robert's mum's job...?" required>
+          </div>
+
+          <div class="fbQ" id="fbQ">
+          <h3 id="falseBeliefQuestion">False Belief Question:</h3>
+          <p><b>Did Clare know that Robert’s Mum was a dinner lady?</b></p>
+          <input type="checkbox" id="fbYes" class="fbQ" name="fbQFPSS2" value="Yes">
+           <label for="fbYes"> Yes </label><br>
+          <input type="checkbox" id="fbNo" class="fbQ" name="fbQFPSS2" value="No">
+           <label for="fbNo"> No </label><br>
+          <input type="checkbox" id="fbDK" class="fbQ" name="fbQFPSS2" value="Don't Know">
+           <label for="fbDK"> Don't Know </label><br>
+          </div>
+          <br>
+
+          <br><br>
+
+          <h2 style="text-align:center;">Control Stories</h2>
+          <label class="control-label"><h2>Story 1:</h2></label>
+          <p>John was in one of the cubicles in the toilets at school. Sam and Eddy were at the sinks
+          nearby. Sam said “You know that new boy in the class -you know, his name is John. Doesn’t he
+          look cool!”. John then came out of the cubicles. Peter said “Oh, hi John. Are you going to play
+          football now?” </p>
+          <div class="detQ" id="detQ">
+          <h3 id="detQuestion">Detection Question:</h3>
+          <p><b>In the story did someone say something that they should not have said?</b></p>
+          <input type="checkbox" id="detYes" class="detQ" name="detQCSS1" value="Yes" ng-model="showID11">
+           <label for="detYes"> Yes </label><br>
+          <input type="checkbox" id="detNo" class="detQ" name="detQCSS1" value="No">
+           <label for="detNo"> No </label><br>
+          <input type="checkbox" id="detDK" class="detQ" name="detQCSS1" value="Don't Know">
+           <label for="detDK"> Don't Know </label><br>
+          </div>
+
+          <div class="idQ" id="idQ" ng-show="showID11">
+          <h3 id="idQuestion">Identification Question:</h3>
+          <p><b>What did they say that they should not have said?</b></p>
+          <input type="text" id="idResponse" class="form-control" placeholder="What did they say...?" required>
+          </div>
+
+          <div class="compQ" id="compQ">
+          <h3 id="compQuestion">Comprehension Question:</h3>
+          <p><b>Where were Sam and Eddy when they were talking? </b></p>
+          <input type="text" id="compResponse" class="form-control" placeholder="Where were they talking...?" required>
+          </div>
+
+          <div class="fbQ" id="fbQ">
+          <h3 id="falseBeliefQuestion">False Belief Question:</h3>
+          <p><b>Did Sam know that John was in the cubicles? </b></p>
+          <input type="checkbox" id="fbYes" class="fbQ" name="fbQCSS1" value="Yes">
+           <label for="fbYes"> Yes </label><br>
+          <input type="checkbox" id="fbNo" class="fbQ" name="fbQCSS1" value="No">
+           <label for="fbNo"> No </label><br>
+          <input type="checkbox" id="fbDK" class="fbQ" name="fbQCSS1" value="Don't Know">
+           <label for="fbDK"> Don't Know </label><br>
+          </div>
+          <br>
+
+          <br><br>
+
+          <label class="control-label"><h2>Story 2:</h2></label>
+          <p>Kate helped her Mum make a fruit pie for her neighbour when he came to visit. She carried it
+          out of the kitchen. “I made it just for you”, said Kate. “Mmm”, replied her neighbour, “That
+          looks lovely - I love pies, especially fruit ones!” </p>
+          <div class="detQ" id="detQ">
+          <h3 id="detQuestion">Detection Question:</h3>
+          <p><b>In the story did someone say something that they should not have said?</b></p>
+          <input type="checkbox" id="detYes" class="detQ" name="detQCSS2" value="Yes" ng-model="showID22">
+           <label for="detYes"> Yes </label><br>
+          <input type="checkbox" id="detNo" class="detQ" name="detQCSS2" value="No">
+           <label for="detNo"> No </label><br>
+          <input type="checkbox" id="detDK" class="detQ" name="detQCSS2" value="Don't Know">
+           <label for="detDK"> Don't Know </label><br>
+          </div>
+
+          <div class="idQ" id="idQ" ng-show="showID22">
+          <h3 id="idQuestion">Identification Question:</h3>
+          <p><b>What did they say that they should not have said?</b></p>
+          <input type="text" id="idResponse" class="form-control" placeholder="What did they say...?" required>
+          </div>
+
+          <div class="compQ" id="compQ">
+          <h3 id="compQuestion">Comprehension Question:</h3>
+          <p><b>What kind of pie had Kate made? </b></p>
+          <input type="text" id="compResponse" class="form-control" placeholder="What kind of pie...?" required>
+          </div>
+
+          <div class="fbQ" id="fbQ">
+          <h3 id="falseBeliefQuestion">False Belief Question:</h3>
+          <p><b>Did the neighbour know that the pie was a fruit pie? </b></p>
+          <input type="checkbox" id="fbYes" class="fbQ" name="fbQCSS2" value="Yes">
+           <label for="fbYes"> Yes </label><br>
+          <input type="checkbox" id="fbNo" class="fbQ" name="fbQCSS2" value="No">
+           <label for="fbNo"> No </label><br>
+          <input type="checkbox" id="fbDK" class="fbQ" name="fbQCSS2" value="Don't Know">
+           <label for="fbDK"> Don't Know </label><br>
+          </div>
+          <br>
+-->
+          <br><br>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">Submit Answers</button>
+        <!--  <button type="button" (click)="reset()">Reset</button> -->
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
